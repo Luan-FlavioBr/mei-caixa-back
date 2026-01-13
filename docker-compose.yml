@@ -1,4 +1,12 @@
 services:
+  go-mei-caixa:
+    container_name: go-mei-caixa
+    image: go-mei-caixa-api
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+    - "meicaixa_postgres"
   db:
     image: postgres:latest
     container_name: meicaixa_postgres
